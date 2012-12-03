@@ -384,6 +384,7 @@
     _selectedDate = selectedDate;
     [self setNeedsLayout];
     self.monthShowing = selectedDate;
+    [self.delegate calendar:self didSelectDate:self.selectedDate];
 }
 
 - (void)setShouldFillCalendar:(BOOL)shouldFillCalendar {
@@ -454,7 +455,6 @@
         return;
     } else {
         self.selectedDate = date;
-        [self.delegate calendar:self didSelectDate:self.selectedDate];
     }
 }
 
